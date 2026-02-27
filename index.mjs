@@ -51,5 +51,5 @@ app.use('/api',forgetpassword);
 
 
 app.get('/', (req, res)=>{
-    res.send({"message":"Welcome new user .. ."});
+    res.send({"message":"Welcome new user .. .please login to access the dashbord"});
 });
