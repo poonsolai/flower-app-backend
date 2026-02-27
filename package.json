@@ -1,0 +1,26 @@
+{
+  "name": "login-server",
+  "version": "1.0.0",
+  "description": "\"My first login server \"",
+  "license": "ISC",
+  "author": "poonsolai karthick",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.mjs"
+  },
+  "dependencies": {
+    "axios": "^1.13.5",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.1",
+    "mongoose": "^9.2.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0"
+  }
+}
