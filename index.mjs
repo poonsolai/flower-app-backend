@@ -11,7 +11,7 @@ import forgetpassword from './routes/forgetpassword.mjs';
 import cookieParser from 'cookie-parser';
 
 //
-app.use("trust proxy",1);
+app.set("trust proxy",1);
 //json data read panna this middleware
 app.use(express.json());
 app.use(express.urlencoded());
