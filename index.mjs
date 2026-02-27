@@ -10,6 +10,8 @@ import authroute from './routes/auth.mjs';
 import forgetpassword from './routes/forgetpassword.mjs';
 import cookieParser from 'cookie-parser';
 
+//
+app.use("trust proxy",1);
 //json data read panna this middleware
 app.use(express.json());
 app.use(express.urlencoded());
@@ -27,11 +29,16 @@ app.use(session({
     secret:process.env.SECRET_KEY,
     resave:false,
     saveUninitialized:false,
+    store:MongoStore.create({
+        mongoUrl:process.env.DB_URL_C,
+        collectionName:'sessions'
+    }),
     rolling:true,
     cookie:{
         maxAge:6000*60,
         httpOnly:true,
-        sameSite:'lax'
+        sameSite:'none',
+        secure:true
     }
 }))
 // initialize the passport 
