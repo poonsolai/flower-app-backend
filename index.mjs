@@ -33,7 +33,6 @@ app.use(session({
         mongoUrl:process.env.DB_URL_C,
         collectionName:'sessions'
     }),
-    rolling:true,
     cookie:{
         maxAge:6000*60,
         httpOnly:true,
