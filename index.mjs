@@ -18,7 +18,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 //frontend to backend connect pannum pothu cors origin problem remove panna this middleware
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin:'https://flower-login-app.vercel.app',
     credentials:true
 }));
 //database connect 
