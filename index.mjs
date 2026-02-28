@@ -19,7 +19,10 @@ app.use(cookieParser());
 //frontend to backend connect pannum pothu cors origin problem remove panna this middleware
 app.use(cors({
     origin:'https://flower-login-app.vercel.app',
-    credentials:true
+    credentials:true,
+    methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    optionsSuccessStatus: 200
 }));
 //database connect 
 ConnectDB();
@@ -34,9 +37,9 @@ app.use(session({
         collectionName:'sessions'
     }),
     cookie:{
-        maxAge:6000*60,
+        maxAge:60000*60,
         httpOnly:true,
-        sameSite:'none',
+        sameSite:'lax',
         secure:true
     }
 }))

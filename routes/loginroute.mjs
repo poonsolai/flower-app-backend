@@ -75,10 +75,21 @@ loginroute.get('/logout', (req, res)=>{
 
     req.logOut((err)=>{
 
-        if(err) return res.status(500).send({message:"error"})
+        if(err) return res.status(500).json({
+            success: false,
+            message: "Logout failed"
+        });
         req.session.destroy();
-        res.clearCookie("connect.sid");
-        res.json({message:"logged out",success:true});
+        res.clearCookie("connect.sid",{
+            path: '/',
+            httpOnly: true,
+            secure: true,
+            sameSite: 'none'
+        });
+        res.json({
+            message: "Logged out successfully",
+            success: true
+        });
 
     })
     
